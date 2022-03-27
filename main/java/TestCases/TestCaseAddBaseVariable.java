@@ -2,15 +2,11 @@ package TestCases;
 
 import org.testng.annotations.Test;
 
-import cispackage.DataProviders;
-import cispackage.element_Highlight;
-import pageObject.PageObgectLogin;
-import pageObject.PageObgect_AddClinicToTrapist;
-import pageObject.PageObgect_AddTrapistToClinic;
-import pageObject.PageObject_AddPatient;
-import pageObject.PageObject_Landing;
-import pageObject.PageObject_ListPatient;
-import pageObject.PageObject_MainMenu;
+import Package.element_Highlight;
+import Package.DataProviders;
+import PageObject.PageObgectLogin;
+import PageObject.PageObject_Landing;
+import PageObject.PageObject_MainMenu;
 
 import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
@@ -48,16 +44,22 @@ public class TestCaseAddBaseVariable {
 		
 		//Landing
 		PageObject_Landing Icon = PageFactory.initElements(driver, PageObject_Landing.class);
-		Icon.CIS_Icon(driver);
+		Icon.GV_Icon(driver);
 		
 		  	  System.out.println(driver.getCurrentUrl());
 	  for(String window : driver.getWindowHandles() ) {
 		  driver.switchTo().window(window);
 	  }
-	   //EnterToAddClinicToTrapistPage
+	  //نوع تخصص
+	  PageObject_MainMenu basic=PageFactory.initElements(driver, PageObject_MainMenu.class);
+	  basic.SpecialityType_Icon(driver);
+	  
+	  
+
+	  }
   @BeforeMethod
   public void beforeMethod() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\s.mollahasani\\webdriver\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Samane\\seleniumWebDriver3\\chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 	  
