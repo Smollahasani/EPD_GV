@@ -28,10 +28,10 @@ public class DataProviders {
 	
 	
 	
-	@DataProvider(name = "AddPationesPersian")
-	public Iterator<Object[]> AddPationesPersian() throws IOException{
+	@DataProvider(name = "AddSpeciality")
+	public Iterator<Object[]> AddSpeciality() throws IOException{
 		CSVReader reader = new CSVReader(
-				new FileReader("C:\\Users\\s.mollahasani\\EPD\\CIS\\src\\test\\resources\\data\\CSVFile\\AddPationesPersian.csv"),',','\'',1);
+				new FileReader("C:\\Users\\Samane\\seleniumWebDriver3\\GV\\src\\main\\resources\\CSVFile\\AddSpeciality.csv"),',','\'',1);
 		List<Object[]> myEntries = new ArrayList<Object[]>();
 		String[] nextLine;
 		while ((nextLine=reader.readNext())!=null) {
@@ -40,44 +40,4 @@ public class DataProviders {
 		reader.close();
 		return myEntries.iterator();
 	}
-	
-	@DataProvider(name = "AddPationesForeign")
-	public Iterator<Object[]> AddPationesForeign() throws IOException{
-		CSVReader reader = new CSVReader(
-				new FileReader("C:\\Users\\s.mollahasani\\EPD\\CIS\\src\\test\\resources\\data\\CSVFile\\AddPationesForeign.csv"),',','\'',1);
-		List<Object[]> myEntries = new ArrayList<Object[]>();
-		String[] nextLine;
-		while ((nextLine=reader.readNext())!=null) {
-			myEntries.add(nextLine);
-		}
-		reader.close();
-		return myEntries.iterator();
-	}
-	
-	@DataProvider(name = "AdmitData")
-	public Iterator<Object[]> AdmitData() throws IOException{
-		CSVReader reader = new CSVReader(
-				new FileReader("C:\\Users\\s.mollahasani\\EPD\\CIS\\src\\test\\resources\\data\\CSVFile\\AdmitData.csv"),',','\'',1);
-		List<Object[]> myEntries = new ArrayList<Object[]>();
-		String[] nextLine;
-		while ((nextLine=reader.readNext())!=null) {
-			myEntries.add(nextLine);
-		}
-		reader.close();
-		return myEntries.iterator();
-	}
-	
-	@DataProvider(name = "AddPationesPersianInAdmit")
-	public Iterator<Object[]> AddPationesPersianInAdmit () throws IOException{
-		CSVReader reader = new CSVReader(
-				new FileReader("C:\\Users\\s.mollahasani\\EPD\\CIS\\src\\test\\resources\\data\\CSVFile\\AddPationesPersian&Admit.csv"),',','\'',1);
-		List<Object[]> myEntries = new ArrayList<Object[]>();
-		String[] nextLine;
-		while ((nextLine=reader.readNext())!=null) {
-			myEntries.add(nextLine);
-		}
-		reader.close();
-		return myEntries.iterator();
-	}
-
-	} 
+} 

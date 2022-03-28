@@ -7,6 +7,7 @@ import Package.DataProviders;
 import PageObject.PageObgectLogin;
 import PageObject.PageObject_Landing;
 import PageObject.PageObject_MainMenu;
+import PageObject.PageObject_speciality;
 
 import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
-public class TestCaseAddBaseVariable {
+public class TestCase_AddSpeciality {
       String nationalCode;
 
       
@@ -29,8 +30,8 @@ public class TestCaseAddBaseVariable {
 	element_Highlight eh= new element_Highlight();
 
 
-  @Test(dataProvider="Login",dataProviderClass=DataProviders.class)
-  public void f(String URL ,String UserName ,String Password) throws Throwable {
+  @Test(dataProvider="AddSpeciality",dataProviderClass=DataProviders.class)
+  public void f(String URL ,String UserName ,String Password, String specialitiyCode, String specialitiyCode2 ,String specialitiyCode3) throws Throwable {
 	 
 	  driver.navigate().to(URL);
 	  driver.manage().window().maximize();
@@ -50,9 +51,13 @@ public class TestCaseAddBaseVariable {
 	  for(String window : driver.getWindowHandles() ) {
 		  driver.switchTo().window(window);
 	  }
-	  //نوع تخصص
+	  //Enter to SpecialityType Page
 	  PageObject_MainMenu basic=PageFactory.initElements(driver, PageObject_MainMenu.class);
 	  basic.SpecialityType_Icon(driver);
+	  //AddSpeciality
+	  PageObject_speciality Add=PageFactory.initElements(driver, PageObject_speciality.class);
+	  Add.AddSpeciality(driver, specialitiyCode, specialitiyCode2, specialitiyCode3);
+	  
 	  
 	  
 

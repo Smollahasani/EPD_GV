@@ -12,52 +12,51 @@ import org.testng.Assert;
 import Package.element_Highlight;
 
 
-public class PageObject_speciality {
+public class PageObject_standardSection {
 
   element_Highlight eh= new element_Highlight();
   
   String AddedCode; 
   String SpecialityName;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select")
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select/div/div[1]")
    WebElement Active_Diactive;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[1]")
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-content/div[1]/div/form/div/div[6]/button[1]")
    WebElement SearchButtom;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[2]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[1]/td[2]/db-tree-cell/div/div/span/i")
+   WebElement OpenDarmani;
+   
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/mat-form-field/div/div[1]/div/input")
    WebElement SearchName;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/mat-form-field/div/div[1]/div/input")
-   WebElement SearchCode;
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[5]/mat-checkbox/label/span[1]")
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[2]/td[5]/mat-checkbox/label/span[1]")
    WebElement checkbox;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-header/div[2]/div/button[2]/span[1]/mat-icon")
+   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-standard-sections/div/mat-card/mat-card-header/div[2]/div/button[2]/span[1]/mat-icon")
    WebElement Save;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[2]")
+   @FindBy(xpath="")
    WebElement Refresh;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[4]")
-   WebElement FirstCodetd;
+   @FindBy(xpath="")
+   WebElement ;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr[6]/td[2]")
-   WebElement NameSpeciality6th;
+   @FindBy(xpath="")
+   WebElement ;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr[2]/td[2]")
-   WebElement NameSpeciality2th;
+   @FindBy(xpath="")
+   WebElement ;
 
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[2]")
+   @FindBy(xpath="")
    WebElement FirstNametd;
 
-   PageObject_speciality DeActive =new PageObject_speciality();
+   PageObject_standardSection DeActive =new PageObject_standardSection();
 
 
 //نمایش لیست غیر فعال
-   public void showDeActivesSpeciality( WebDriver driver ) throws InterruptedException {
+   public void showDeActivesSection( WebDriver driver ) throws InterruptedException {
 	   Actions action = new Actions(driver);
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	   eh.highlightElement(driver,Active_Diactive);
@@ -73,18 +72,18 @@ public class PageObject_speciality {
 
    }
    
-//اضافه کردن تخصص
-   public void AddSpeciality( WebDriver driver ,String specialitiyCode ,String specialitiyCode2 ,String specialitiyCode3 ) throws InterruptedException {
+//اضافه کردن بخش
+   public void AddSection( WebDriver driver ,String sectionName ,String sectionName2 ,String sectionName3 ) throws InterruptedException {
 	   
 	   Actions action = new Actions(driver);
 	   
 //نمایش لیست غیر فعال
-	   PageObject_speciality DeActive =new PageObject_speciality();
-	   DeActive.showDeActivesSpeciality(driver);
-//انتخاب و ذخیره تخصص اول
+	   PageObject_standardSection DeActive =new PageObject_standardSection();
+	   DeActive.showDeActivesSection(driver);
+//انتخاب و ذخیره بخش اول
 	   action
-	   .click(SearchCode)
-	   .sendKeys(specialitiyCode)
+	   .click(SearchName)
+	   .sendKeys(sectionName)
 	   .click(SearchButtom)
 	   .click(checkbox)
 	   .click(Save)
