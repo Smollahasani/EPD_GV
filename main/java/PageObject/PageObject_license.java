@@ -138,7 +138,7 @@ public class PageObject_license {
 	   
    }
  //سرچ نام مجوز
-   public void SearchSpecialityName ( WebDriver driver ) throws InterruptedException {
+   public void SearchLicenseName ( WebDriver driver ) throws InterruptedException {
 	   
 	   Actions action = new Actions(driver);
 	 //نمایش لیست غیرفعال
@@ -163,7 +163,32 @@ public class PageObject_license {
 	   .perform();
 	   Assert.assertEquals(licenseName, FirstNametd);
 	   action.click(Refresh).perform();
-   
-   
-   }   
+      }   
+   //غیر فعال کردن مجوز
+   public void DeActiveLicense ( WebDriver driver ,String licenseCode ) throws InterruptedException {
+	   Actions action = new Actions(driver);
+	   //سرچ مجوز مورد نظر
+	   action
+	   .click(SearchCode)
+	   .sendKeys(licenseCode)
+	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(2000);
+	   //غیرفعال و ذخیره کردن
+	   action
+	   .click(checkbox)
+	   .click(Save)
+	   .click(Refresh)
+	   .perform();
+	   //نمایش لیست غیر فعال ها
+	   DeActive.showDeActiveslicense(driver);
+	   //چک غیرفعال شدن تخصص
+	   action
+	   .click(SearchCode)
+	   .sendKeys(licenseCode)
+	   .click(SearchButtom)
+	   .perform();
+	   AddedCode=FirstCodetd.getText();   
+   }
+
  }

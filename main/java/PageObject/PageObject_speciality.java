@@ -116,7 +116,7 @@ public class PageObject_speciality {
 	   .click(SearchButtom)
 	   .perform();
 	   AddedCode=FirstCodetd.getText();
-	   Assert.assertEquals(AddedCode, specialitiyCode);
+	   Assert.assertEquals(AddedCode, specialitiyCode2);
  //انتخاب و ذخیره تخصص سوم
 	   action
 	   .click(SearchCode)
@@ -134,7 +134,7 @@ public class PageObject_speciality {
 	   .click(SearchButtom)
 	   .perform();
 	   AddedCode=FirstCodetd.getText();
-	   Assert.assertEquals(AddedCode, specialitiyCode);   
+	   Assert.assertEquals(AddedCode, specialitiyCode3);   
 	   
    }
  //سرچ نام تخصص
@@ -163,7 +163,31 @@ public class PageObject_speciality {
 	   .perform();
 	   Assert.assertEquals(SpecialityName, FirstNametd);
 	   action.click(Refresh).perform();
-   
-   
    }   
+   //غیر فعال کردن تخصص
+   public void DeActiveSpeciality ( WebDriver driver ,String specialitiyCode ) throws InterruptedException {
+	   Actions action = new Actions(driver);
+	   //سرچ تخصص مورد نظر
+	   action
+	   .click(SearchCode)
+	   .sendKeys(specialitiyCode)
+	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(2000);
+	   //غیرفعال و ذخیره کردن
+	   action
+	   .click(checkbox)
+	   .click(Save)
+	   .click(Refresh)
+	   .perform();
+	   //نمایش لیست غیر فعال ها
+	   DeActive.showDeActivesSpeciality(driver);
+	   //چک غیرفعال شدن تخصص
+	   action
+	   .click(SearchCode)
+	   .sendKeys(specialitiyCode)
+	   .click(SearchButtom)
+	   .perform();
+	   AddedCode=FirstCodetd.getText();   
+   }
  }

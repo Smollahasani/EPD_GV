@@ -7,6 +7,7 @@ import Package.DataProviders;
 import PageObject.PageObgectLogin;
 import PageObject.PageObject_Landing;
 import PageObject.PageObject_MainMenu;
+import PageObject.PageObject_insuranse;
 import PageObject.PageObject_license;
 import PageObject.PageObject_speciality;
 
@@ -23,7 +24,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
-public class TestCase_AddLicecse {
+public class TestCase_DeActiveInsuranse {
       String nationalCode;
 
       
@@ -32,7 +33,7 @@ public class TestCase_AddLicecse {
 
 
   @Test(dataProvider="AddLicense",dataProviderClass=DataProviders.class)
-  public void f(String URL ,String UserName ,String Password, String licenseCode, String licenseCode2 ,String licenseCode3) throws Throwable {
+  public void f(String URL ,String UserName ,String Password, String insuranseCode, String insuranseCode2 ,String insuranseCode3) throws Throwable {
 	 
 	  driver.navigate().to(URL);
 	  driver.manage().window().maximize();
@@ -52,12 +53,12 @@ public class TestCase_AddLicecse {
 	  for(String window : driver.getWindowHandles() ) {
 		  driver.switchTo().window(window);
 	  }
-	  //Enter to License Page
+	  //Enter to insuranseCode Page
 	  PageObject_MainMenu basic=PageFactory.initElements(driver, PageObject_MainMenu.class);
-	  basic.License_Icon(driver);
-	  //AddLicense
-	  PageObject_license Add=PageFactory.initElements(driver, PageObject_license.class);
-	  Add.Addlicense(driver, licenseCode, licenseCode2, licenseCode3);
+	  basic.Insuranse_Icon(driver);
+	  //DeActiveLicense
+	  PageObject_insuranse DeActive=PageFactory.initElements(driver, PageObject_insuranse.class);
+	  DeActive.DeActiveInsurance(driver, insuranseCode);
 	  
 
 	  }

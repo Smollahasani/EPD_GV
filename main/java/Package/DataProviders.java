@@ -40,4 +40,17 @@ public class DataProviders {
 		reader.close();
 		return myEntries.iterator();
 	}
+	@DataProvider(name = "AddLicense")
+	public Iterator<Object[]> AddLicense() throws IOException{
+		CSVReader reader = new CSVReader(
+				new FileReader("C:\\Users\\Samane\\seleniumWebDriver3\\GV\\src\\main\\resources\\CSVFiles\\AddLicense.csv"),',','\'',1);
+		List<Object[]> myEntries = new ArrayList<Object[]>();
+		String[] nextLine;
+		while ((nextLine=reader.readNext())!=null) {
+			myEntries.add(nextLine);
+		}
+		reader.close();
+		return myEntries.iterator();
+	}
+
 } 
