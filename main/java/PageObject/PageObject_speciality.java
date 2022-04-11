@@ -3,6 +3,7 @@ package PageObject;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,6 +19,8 @@ public class PageObject_speciality {
   
   String AddedCode; 
   String SpecialityName;
+  String searchSpecialityName;
+
 
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select")
    WebElement Active_Diactive;
@@ -53,12 +56,69 @@ public class PageObject_speciality {
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[2]")
    WebElement FirstNametd;
 
-   PageObject_speciality DeActive =new PageObject_speciality();
 
 
-//نمایش لیست غیر فعال
-   public void showDeActivesSpeciality( WebDriver driver ) throws InterruptedException {
+
+   
+   
+//اضافه کردن تخصص
+   public void AddSpeciality( WebDriver driver ,String specialitiyCode ,String specialitiyCode2 ,String specialitiyCode3 ) throws InterruptedException {
+	   
 	   Actions action = new Actions(driver);
+	   
+//نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.UP)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+//انتخاب و ذخیره تخصص اول
+	   action
+	   .click(SearchCode)
+	   .sendKeys(specialitiyCode)
+	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+       action
+	   .click(checkbox)
+	   .click(Save)
+	   .perform();
+	   Thread.sleep(2000);
+	   action.click(Refresh).perform();
+//چک اضافه شدن تخصص
+	   action
+	   .click(SearchCode)
+	   .sendKeys(specialitiyCode)
+	   .click(SearchButtom)
+	   .perform();
+	   Boolean staleElement = true;
+	   while(staleElement){
+
+		   try{
+
+			   AddedCode=FirstCodetd.getText();
+
+		      staleElement = false;
+
+
+		   } catch(StaleElementReferenceException FirstCodetd){
+
+		     staleElement = true;
+
+		   }
+
+		 }
+
+	   AddedCode=FirstCodetd.getText();
+	   Assert.assertEquals(AddedCode, specialitiyCode);
+	   action.click(Refresh).perform();
+	 //نمایش لیست غیر فعال
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	   eh.highlightElement(driver,Active_Diactive);
 	   Thread.sleep(1000);
@@ -71,39 +131,14 @@ public class PageObject_speciality {
 	   action.click(SearchButtom).perform();
 	   Thread.sleep(1000);
 
-   }
-   
-//اضافه کردن تخصص
-   public void AddSpeciality( WebDriver driver ,String specialitiyCode ,String specialitiyCode2 ,String specialitiyCode3 ) throws InterruptedException {
-	   
-	   Actions action = new Actions(driver);
-	   
-//نمایش لیست غیر فعال
-	   PageObject_speciality DeActive =new PageObject_speciality();
-	   DeActive.showDeActivesSpeciality(driver);
-//انتخاب و ذخیره تخصص اول
-	   action
-	   .click(SearchCode)
-	   .sendKeys(specialitiyCode)
-	   .click(SearchButtom)
-	   .click(checkbox)
-	   .click(Save)
-	   .perform();
-	   Thread.sleep(2000);
-	   action.click(Refresh).perform();
-//چک اضافه شدن تخصص
-	   action
-	   .click(SearchCode)
-	   .sendKeys(specialitiyCode)
-	   .click(SearchButtom)
-	   .perform();
-	   AddedCode=FirstCodetd.getText();
-	   Assert.assertEquals(AddedCode, specialitiyCode);
 //انتخاب و ذخیره تخصص دوم
 	   action
 	   .click(SearchCode)
 	   .sendKeys(specialitiyCode2)
 	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+       action
 	   .click(checkbox)
 	   .click(Save)
 	   .perform();
@@ -115,13 +150,49 @@ public class PageObject_speciality {
 	   .sendKeys(specialitiyCode2)
 	   .click(SearchButtom)
 	   .perform();
+	   Boolean staleElement2 = true;
+	   while(staleElement2){
+
+		   try{
+
+			   AddedCode=FirstCodetd.getText();
+
+		      staleElement2 = false;
+
+
+		   } catch(StaleElementReferenceException FirstCodetd){
+
+		     staleElement2 = true;
+
+		   }
+
+		 }
+
 	   AddedCode=FirstCodetd.getText();
 	   Assert.assertEquals(AddedCode, specialitiyCode2);
+	   action.click(Refresh).perform();
+
+	 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.UP)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+
  //انتخاب و ذخیره تخصص سوم
 	   action
 	   .click(SearchCode)
 	   .sendKeys(specialitiyCode3)
 	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+       action
 	   .click(checkbox)
 	   .click(Save)
 	   .perform();
@@ -133,16 +204,46 @@ public class PageObject_speciality {
 	   .sendKeys(specialitiyCode3)
 	   .click(SearchButtom)
 	   .perform();
+	   Boolean staleElement3 = true;
+	   while(staleElement3){
+
+		   try{
+
+			   AddedCode=FirstCodetd.getText();
+
+		      staleElement3 = false;
+
+
+		   } catch(StaleElementReferenceException FirstCodetd){
+
+		     staleElement3 = true;
+
+		   }
+
+		 }
+
 	   AddedCode=FirstCodetd.getText();
-	   Assert.assertEquals(AddedCode, specialitiyCode3);   
+	   Assert.assertEquals(AddedCode, specialitiyCode3); 
+	   action.click(Refresh).perform();
+
 	   
    }
  //سرچ نام تخصص
    public void SearchSpecialityName ( WebDriver driver ) throws InterruptedException {
 	   
 	   Actions action = new Actions(driver);
-	 //نمایش لیست غیرفعال
-	   DeActive.showDeActivesSpeciality(driver);
+	 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.UP)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
 //سرچ مورد ششم لیست
 	   SpecialityName=NameSpeciality6th.getText();
 	   action
@@ -150,10 +251,22 @@ public class PageObject_speciality {
 	   .sendKeys(SpecialityName)
 	   .click(SearchButtom)
 	   .perform();
-	   Assert.assertEquals(SpecialityName, FirstNametd);
+	   Thread.sleep(1000);
+	   searchSpecialityName=FirstNametd.getText();
+	   Assert.assertEquals(SpecialityName, searchSpecialityName);
 	   action.click(Refresh).perform();
-	 //نمایش لیست غیرفعال
-	   DeActive.showDeActivesSpeciality(driver);
+	 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.UP)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
 	 //سرچ مورد دوم لیست
 	   SpecialityName=NameSpeciality2th.getText();
 	   action
@@ -161,7 +274,9 @@ public class PageObject_speciality {
 	   .sendKeys(SpecialityName)
 	   .click(SearchButtom)
 	   .perform();
-	   Assert.assertEquals(SpecialityName, FirstNametd);
+	   Thread.sleep(1000);
+	   searchSpecialityName=FirstNametd.getText();
+	   Assert.assertEquals(SpecialityName, searchSpecialityName);
 	   action.click(Refresh).perform();
    }   
    //غیر فعال کردن تخصص
@@ -180,8 +295,18 @@ public class PageObject_speciality {
 	   .click(Save)
 	   .click(Refresh)
 	   .perform();
-	   //نمایش لیست غیر فعال ها
-	   DeActive.showDeActivesSpeciality(driver);
+	 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.UP)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
 	   //چک غیرفعال شدن تخصص
 	   action
 	   .click(SearchCode)

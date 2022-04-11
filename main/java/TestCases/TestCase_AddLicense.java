@@ -24,15 +24,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class TestCase_AddLicense {
-      String nationalCode;
-
-      
       WebDriver driver;
-	element_Highlight eh= new element_Highlight();
-
-
+      
+      
   @Test(dataProvider="AddLicense",dataProviderClass=DataProviders.class)
-  public void f(String URL ,String UserName ,String Password, String licenseCode, String licenseCode2 ,String licenseCode3) throws Throwable {
+  public void f(String URL ,String UserName ,String Password, String liscenseCode, String licenseCode2 ,String licenseCode3) throws Throwable {
 	 
 	  driver.navigate().to(URL);
 	  driver.manage().window().maximize();
@@ -47,6 +43,8 @@ public class TestCase_AddLicense {
 		//Landing
 		PageObject_Landing Icon = PageFactory.initElements(driver, PageObject_Landing.class);
 		Icon.GV_Icon(driver);
+		  driver.manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);  
+
 		
 		  	  System.out.println(driver.getCurrentUrl());
 	  for(String window : driver.getWindowHandles() ) {
@@ -55,15 +53,20 @@ public class TestCase_AddLicense {
 	  //Enter to License Page
 	  PageObject_MainMenu basic=PageFactory.initElements(driver, PageObject_MainMenu.class);
 	  basic.License_Icon(driver);
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
+
 	  //AddLicense
 	  PageObject_license Add=PageFactory.initElements(driver, PageObject_license.class);
-	  Add.Addlicense(driver, licenseCode, licenseCode2, licenseCode3);
+	  System.out.println("samane");
+	  Add.Addlicense(driver, liscenseCode, licenseCode2, licenseCode3);
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
+
 	  
 
 	  }
   @BeforeMethod
   public void beforeMethod() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Samane\\seleniumWebDriver3\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 	  

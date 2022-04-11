@@ -27,7 +27,6 @@ public class TestCase_AddSpeciality {
 
       
       WebDriver driver;
-	element_Highlight eh= new element_Highlight();
 
 
   @Test(dataProvider="AddSpeciality",dataProviderClass=DataProviders.class)
@@ -64,7 +63,7 @@ public class TestCase_AddSpeciality {
 	  }
   @BeforeMethod
   public void beforeMethod() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Samane\\seleniumWebDriver3\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 	  

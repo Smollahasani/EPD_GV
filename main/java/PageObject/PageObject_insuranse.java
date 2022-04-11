@@ -3,6 +3,7 @@ package PageObject;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,6 +19,7 @@ public class PageObject_insuranse {
   
   String AddedCode; 
   String InsuranceName;
+  String searchInsurance;
 
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select")
    WebElement Active_Diactive;
@@ -53,25 +55,8 @@ public class PageObject_insuranse {
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr/td[2]")
    WebElement FirstNametd;
 
-   PageObject_insuranse DeActive =new PageObject_insuranse();
 
 
-//نمایش لیست غیر فعال
-   public void showDeActivesInsurance( WebDriver driver ) throws InterruptedException {
-	   Actions action = new Actions(driver);
-	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,Active_Diactive);
-	   Thread.sleep(1000);
-	   Active_Diactive.click();
-	   eh.unhighlightLast(driver, Active_Diactive);
-	   action
-	   .sendKeys(Keys.UP)
-	   .sendKeys(Keys.ENTER).perform();
-	   Thread.sleep(1000);
-	   action.click(SearchButtom).perform();
-	   Thread.sleep(1000);
-
-   }
    
 //اضافه کردن بیمه
    public void AddInsurance( WebDriver driver ,String insuranceCode ,String insuranceCode2 ,String insuranceCode3 ) throws InterruptedException {
@@ -79,19 +64,31 @@ public class PageObject_insuranse {
 	   Actions action = new Actions(driver);
 	   
 //نمایش لیست غیر فعال
-	   PageObject_insuranse DeActive =new PageObject_insuranse();
-	   DeActive.showDeActivesInsurance(driver);
-//انتخاب و ذخیره تخصص اول
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+//انتخاب و ذخیره بیمه اول
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode)
 	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+	   action
 	   .click(checkbox)
 	   .click(Save)
 	   .perform();
 	   Thread.sleep(2000);
 	   action.click(Refresh).perform();
-//چک اضافه شدن تخصص
+//چک اضافه شدن بیمه
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode)
@@ -99,61 +96,152 @@ public class PageObject_insuranse {
 	   .perform();
 	   AddedCode=FirstCodetd.getText();
 	   Assert.assertEquals(AddedCode, insuranceCode);
-//انتخاب و ذخیره تخصص دوم
+	   action.click(Refresh).perform();
+		 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+
+//انتخاب و ذخیره بیمه دوم
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode2)
 	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+	   action
 	   .click(checkbox)
 	   .click(Save)
 	   .perform();
 	   Thread.sleep(2000);
 	   action.click(Refresh).perform();
-//چک اضافه شدن تخصص دوم	   
+//چک اضافه شدن بیمه دوم	   
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode2)
 	   .click(SearchButtom)
 	   .perform();
+	   Boolean staleElement = true;
+	   while(staleElement){
+
+		   try{
+
+			   AddedCode=FirstCodetd.getText();
+
+		      staleElement = false;
+
+
+		   } catch(StaleElementReferenceException FirstCodetd){
+
+		     staleElement = true;
+
+		   }
+
+		 }
+
 	   AddedCode=FirstCodetd.getText();
 	   Assert.assertEquals(AddedCode, insuranceCode2);
- //انتخاب و ذخیره تخصص سوم
+	   action.click(Refresh).perform();
+		 //نمایش لیست غیر فعال
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+
+ //انتخاب و ذخیره بیمه سوم
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode3)
 	   .click(SearchButtom)
+	   .perform();
+	   Thread.sleep(500);
+	   action
 	   .click(checkbox)
 	   .click(Save)
 	   .perform();
 	   Thread.sleep(2000);
 	   action.click(Refresh).perform();
-//چک اضافه شدن تخصص سوم	   
+//چک اضافه شدن بیمه سوم	   
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode3)
 	   .click(SearchButtom)
 	   .perform();
+	   Boolean staleElement1 = true;
+	   while(staleElement1){
+
+		   try{
+
+			   AddedCode=FirstCodetd.getText();
+
+		      staleElement1 = false;
+
+
+		   } catch(StaleElementReferenceException FirstCodetd){
+
+		     staleElement1 = true;
+
+		   }
+
+		 }
+
 	   AddedCode=FirstCodetd.getText();
 	   Assert.assertEquals(AddedCode, insuranceCode3);   
 	   
    }
- //سرچ نام تخصص
+ //سرچ نام بیمه
    public void SearchInsuranceName ( WebDriver driver ) throws InterruptedException {
 	   
 	   Actions action = new Actions(driver);
 	 //نمایش لیست غیرفعال
-	   DeActive.showDeActivesInsurance(driver);
-//سرچ مورد سوم لیست
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
+//سرچ مورد بیمه لیست
 	   InsuranceName=NameInsuranse3th.getText();
 	   action
 	   .click(SearchName)
 	   .sendKeys(InsuranceName)
 	   .click(SearchButtom)
 	   .perform();
-	   Assert.assertEquals(InsuranceName, FirstNametd);
+	   searchInsurance=FirstNametd.getText();
+	   Assert.assertEquals(InsuranceName, searchInsurance);
 	   action.click(Refresh).perform();
 	 //نمایش لیست غیرفعال
-	   DeActive.showDeActivesInsurance(driver);
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
 	 //سرچ مورد ششم لیست
 	   InsuranceName=NameInsuranse6th.getText();
 	   action
@@ -161,13 +249,16 @@ public class PageObject_insuranse {
 	   .sendKeys(InsuranceName)
 	   .click(SearchButtom)
 	   .perform();
-	   Assert.assertEquals(InsuranceName, FirstNametd);
+	   Thread.sleep(1000);
+	   searchInsurance=FirstNametd.getText();
+	   Thread.sleep(1000);
+	   Assert.assertEquals(InsuranceName, searchInsurance);
 	   action.click(Refresh).perform();
    }   
    //غیر فعال کردن بیمه
    public void DeActiveInsurance ( WebDriver driver ,String insuranceCode ) throws InterruptedException {
 	   Actions action = new Actions(driver);
-	   //سرچ تخصص مورد نظر
+	   //سرچ بیمه مورد نظر
 	   action
 	   .click(SearchCode)
 	   .sendKeys(insuranceCode)
@@ -181,7 +272,17 @@ public class PageObject_insuranse {
 	   .click(Refresh)
 	   .perform();
 	   //نمایش لیست غیر فعال ها
-	   DeActive.showDeActivesInsurance(driver);
+	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   eh.highlightElement(driver,Active_Diactive);
+	   Thread.sleep(1000);
+	   Active_Diactive.click();
+	   eh.unhighlightLast(driver, Active_Diactive);
+	   action
+	   .sendKeys(Keys.DOWN)
+	   .sendKeys(Keys.ENTER).perform();
+	   Thread.sleep(1000);
+	   action.click(SearchButtom).perform();
+	   Thread.sleep(1000);
 	   //چک غیرفعال شدن بیمه
 	   action
 	   .click(SearchCode)

@@ -109,6 +109,7 @@ public class PageObject_MainMenu {
 	   Thread.sleep(1000);
 	   BasicVariable.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Basic_SpecialityType);
 	   Basic_SpecialityType.click();
 	   Thread.sleep(1000);
    }
@@ -119,6 +120,7 @@ public class PageObject_MainMenu {
 	   Thread.sleep(1000);
 	   BasicVariable.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Basic_StandardSection);
 	   Basic_StandardSection.click();
 	   Thread.sleep(1000);
    }
@@ -129,6 +131,7 @@ public class PageObject_MainMenu {
 	   Thread.sleep(1000);
 	   BasicVariable.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Basic_License);
 	   Basic_License.click();
 	   Thread.sleep(1000);
    }
@@ -139,63 +142,69 @@ public class PageObject_MainMenu {
 	   Thread.sleep(1000);
 	   BasicVariable.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Basic_Insuranse);
 	   Basic_Insuranse.click();
 	   Thread.sleep(1000);
    }
    public void DefinitionCenterParts_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,PublicVariables);
 	   Thread.sleep(1000);
 	   PublicVariables.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Public_DefinitionCenterParts);
 	   Public_DefinitionCenterParts.click();
 	   Thread.sleep(1000);
    }
    public void Roles_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,PublicVariables);
 	   Thread.sleep(1000);
 	   PublicVariables.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Public_Roles);
 	   Public_Roles.click();
 	   Thread.sleep(1000);
    }
    public void Group_Services_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,Services);
 	   Thread.sleep(1000);
 	   Services.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Group_Services);
 	   Group_Services.click();
 	   Thread.sleep(1000);
    }
    public void Service_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,Services);
 	   Thread.sleep(1000);
 	   Services.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Services_Service);
 	   Services_Service.click();
 	   Thread.sleep(1000);
    }
    public void CenterServices_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,Services);
 	   Thread.sleep(1000);
 	   Services.click();
 	   Thread.sleep(1000);
+	   eh.highlightElement(driver,Services_CenterServices);
 	   Services_CenterServices.click();
 	   Thread.sleep(1000);
    }
    public void Tariff_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -205,7 +214,7 @@ public class PageObject_MainMenu {
    public void Contract_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -215,7 +224,7 @@ public class PageObject_MainMenu {
    public void RialiAdjustTriff_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -225,7 +234,7 @@ public class PageObject_MainMenu {
    public void FixedRialiAdjust_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -235,7 +244,7 @@ public class PageObject_MainMenu {
    public void centerContract_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -245,7 +254,7 @@ public class PageObject_MainMenu {
    public void InsuranceAllocation_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -255,7 +264,7 @@ public class PageObject_MainMenu {
    public void GlobalServices_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -265,7 +274,7 @@ public class PageObject_MainMenu {
    public void AddToGlobal_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -275,7 +284,7 @@ public class PageObject_MainMenu {
    public void CenterFinancialSettings_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,FinancialSettings);
 	   Thread.sleep(1000);
 	   FinancialSettings.click();
 	   Thread.sleep(1000);
@@ -285,7 +294,7 @@ public class PageObject_MainMenu {
    public void Security_Icon( WebDriver driver) throws InterruptedException {
 	   
 	   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	   eh.highlightElement(driver,BasicVariable);
+	   eh.highlightElement(driver,Security);
 	   Thread.sleep(1000);
 	   Security.click();
 	   Thread.sleep(1000);
