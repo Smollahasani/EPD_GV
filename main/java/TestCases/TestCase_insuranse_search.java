@@ -31,8 +31,8 @@ public class TestCase_insuranse_search {
 	element_Highlight eh= new element_Highlight();
 
 
-  @Test(dataProvider="",dataProviderClass=DataProviders.class)
-  public void f(String URL ,String UserName ,String Password, String insuranseCode, String insuranseCode2 ,String insuranseCode3) throws Throwable {
+  @Test(dataProvider="Login",dataProviderClass=DataProviders.class)
+  public void f(String URL ,String UserName ,String Password) throws Throwable {
 	 
 	  driver.navigate().to(URL);
 	  driver.manage().window().maximize();
@@ -62,7 +62,7 @@ public class TestCase_insuranse_search {
 	  }
   @BeforeMethod
   public void beforeMethod() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Samane\\seleniumWebDriver3\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 	  

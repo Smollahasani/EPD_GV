@@ -56,6 +56,7 @@ public class TestCase_AddInsuranse {
 	  //Enter to InsuranceCode Page
 	  PageObject_MainMenu basic=PageFactory.initElements(driver, PageObject_MainMenu.class);
 	  basic.Insuranse_Icon(driver);
+	   Thread.sleep(1500);
 	  //AddInsurance
 	  PageObject_insuranse Add=PageFactory.initElements(driver, PageObject_insuranse.class);
 	  Add.AddInsurance(driver, InsuranceCode, InsuranceCode2, InsuranceCode3);
@@ -63,7 +64,7 @@ public class TestCase_AddInsuranse {
 	  }
   @BeforeMethod
   public void beforeMethod() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Samane\\seleniumWebDriver3\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);  
 	  
