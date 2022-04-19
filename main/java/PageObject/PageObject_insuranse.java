@@ -21,38 +21,38 @@ public class PageObject_insuranse {
   String InsuranceName;
   String searchInsurance;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select")
+   @FindBy(xpath="//mat-select[@name='active']")
    WebElement Active_Diactive;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[1]")
+   @FindBy(xpath="//button[@type='submit']")
    WebElement SearchButtom;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[2]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='title']")
    WebElement SearchName;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='code']")
    WebElement SearchCode;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[1]/td[5]/mat-checkbox/label/span[1]")
-   WebElement checkbox;
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-header/div[2]/div/button[2]/span[1]/mat-icon")
+   @FindBy(xpath="//button[@mattooltip='ذخیره']")
    WebElement Save;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[2]")
+   @FindBy(xpath="//button[@type='button' and @mattooltip='انصراف']")
    WebElement Refresh;
+
+   @FindBy(xpath="//tbody/tr[1]/td[5]/descendant::input")
+   WebElement checkbox;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[1]/td[3]")
+   @FindBy(xpath="//tbody/tr[1]/td[3]")
    WebElement FirstCodetd;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[3]/td[2]/db-tree-cell/div/div")
+   @FindBy(xpath="//tbody//*[contains (@class , 'true background-lvl-0')][3]/td[2]/descendant::span[2]")
    WebElement NameInsuranse3th;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr[6]/td[2]/db-tree-cell/div/div")
+   @FindBy(xpath="//tbody//*[contains (@class , 'true background-lvl-0')][6]/td[2]/descendant::span[2]")
    WebElement NameInsuranse6th;
 
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-insurance/div/mat-card/mat-card-content/div[2]/db-angular-tree-grid/table/tbody/tr/td[2]")
+   @FindBy(xpath="//tbody//*[contains (@class , 'true background-lvl-0')][1]/td[2]/descendant::span[2]")
    WebElement FirstNametd;
 
 

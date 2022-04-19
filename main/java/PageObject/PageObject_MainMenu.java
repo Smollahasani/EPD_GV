@@ -13,80 +13,80 @@ public class PageObject_MainMenu {
 
   element_Highlight eh= new element_Highlight();
 //متغیرهای پایه
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/a/div/span[1]")
+   @FindBy(xpath="//span[text()='متغیرهای پایه']")
    WebElement BasicVariable;
  //تحصیلات  
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/div/app-menu-list-item[1]/a/div/span")
+   @FindBy(xpath="//span[text()='تحصیلات']")
    WebElement Basic_Education;
 //تخصص   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/div/app-menu-list-item[2]/a/div/span")
+   @FindBy(xpath="//span[text()='نوع تخصص']")
    WebElement Basic_SpecialityType;
 //بخش های استاندارد
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/div/app-menu-list-item[3]/a/div/span")
+   @FindBy(xpath="//span[text()='بخش های استاندارد']")
    WebElement Basic_StandardSection;
 //مجوز
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/div/app-menu-list-item[4]/a/div/span")
+   @FindBy(xpath="//span[text()='مجوز']")
    WebElement Basic_License;
 //بیمه
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[1]/div/app-menu-list-item[5]/a/div/span")
+   @FindBy(xpath="//span[text()='بیمه']")
    WebElement Basic_Insuranse;
 //متغیرهای عمومی
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[2]/a/div/span[1]")
+   @FindBy(xpath="//span[text()='متغیرهای عمومی']")
    WebElement PublicVariables;
 //تعرییف بخش های مرکز
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[2]/div/app-menu-list-item[1]/a/div/span")
+   @FindBy(xpath="//span[text()='تعریف بخش های مرکز']")
    WebElement Public_DefinitionCenterParts;
 //نقش
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[2]/div/app-menu-list-item[2]/a/div")
+   @FindBy(xpath="//span[text()='نقش']")
    WebElement Public_Roles;
 //خدمات
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[3]/a")
+   @FindBy(xpath="//span[text()='خدمات']")
    WebElement Services;
 //گروه خدمات
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[3]/div/app-menu-list-item[1]/a/div/span")
+   @FindBy(xpath="//span[text()='گروه خدمات']")
    WebElement Group_Services;
 //خدمت
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[3]/div/app-menu-list-item[2]/a/div")
+   @FindBy(xpath="//span[text()='خدمت']")
    WebElement Services_Service;
 //خدمات مراکز
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[3]/div/app-menu-list-item[3]/a/div/span")
+   @FindBy(xpath="//span[text()='خدمات مراکز']")
    WebElement Services_CenterServices;
 //تنظیمات مالی
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/a/div/span[1]")
+   @FindBy(xpath="//span[text()='تنظیمات مالی']")
    WebElement FinancialSettings;
 //نام تعرفه
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[1]/a/div/span")
+   @FindBy(xpath="//span[text()='نام تعرفه']")
    WebElement Financial_Tariff;
 //نام قرارداد
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[2]/a/div/span")
+   @FindBy(xpath="//span[text()='نام قرارداد']")
    WebElement Financial_Contract;
 //تنظیم ریالی k تعرفه
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[3]/a/div/span")
+   @FindBy(xpath="//span[text()='تنظیم ریالیk  تعرفه']")
    WebElement Financial_RialiAdjustTriff;
 //تنظیم ثابت ریالی   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[4]/a/div/span")
+   @FindBy(xpath="//span[text()='تنظیم ریالی ثابت']")
    WebElement Financial_FixedRialiAdjust;
 //تنظیم قرارداد
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[5]/a/div/span")
+   @FindBy(xpath="//span[text()='تنظیم قرارداد ']")
    WebElement Financial_centerContract;
 //تخصیص بیمه
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[6]/a/div/span")
+   @FindBy(xpath="//span[text()='تخصیص  بیمه']")
    WebElement Financial_InsuranceAllocation;
-//گلوبال رسمی مراکز
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[7]/a/div/span")
+//گلوبال رسمی خدمات
+   @FindBy(xpath="//span[text()='خدمات رسمی گلوبال']")
    WebElement Financial_GlobalServices;
 //اضافه به گلوبال
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[8]/a/div/span")
+   @FindBy(xpath="//span[text()='اضافه به گلوبال']")
    WebElement Financial_AddToGlobal;
 //تنظیمات مالی مراکز
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[4]/div/app-menu-list-item[9]/a/div/span")
+   @FindBy(xpath="//span[text()='تنظیمات مالی مراکز']")
    WebElement Financial_CenterFinancialSettings;
 
 //امنیت
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[5]/a/div/span[1]")
+   @FindBy(xpath="(//span[text()='امنیت'])[1]")
    WebElement Security;
 //زیرمنوی امنیت
-   @FindBy(xpath="/html/body/app-root/div[2]/div[1]/mat-nav-list/app-menu-list-item[5]/div/app-menu-list-item/a/div")
+   @FindBy(xpath="(//span[text()='امنیت'])[2]")
    WebElement Security1;
    
    
