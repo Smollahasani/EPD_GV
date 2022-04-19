@@ -21,39 +21,37 @@ public class PageObject_speciality {
   String SpecialityName;
   String searchSpecialityName;
 
-
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select")
+ @FindBy(xpath="//mat-select[@name='active']")
    WebElement Active_Diactive;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[1]")
+   @FindBy(xpath="//button[@type='submit']")
    WebElement SearchButtom;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[2]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='title']")
    WebElement SearchName;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='code']")
    WebElement SearchCode;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[5]/mat-checkbox/label/span[1]")
-   WebElement checkbox;
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-header/div[2]/div/button[2]/span[1]/mat-icon")
+   @FindBy(xpath="//button[@mattooltip='ذخیره']")
    WebElement Save;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[1]/div/form/div/div[5]/button[2]")
+   @FindBy(xpath="//button[@type='button' and @mattooltip='بارگذاری مجدد']")
    WebElement Refresh;
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[4]")
+
+   @FindBy(xpath="//tbody/tr[1]/td[5]/descendant::input")
+   WebElement checkbox;
+  
+   @FindBy(xpath="//tbody/tr[1]/td[4]")
    WebElement FirstCodetd;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr[6]/td[2]")
+   @FindBy(xpath="//tbody/tr[6]/td[2]")
    WebElement NameSpeciality6th;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr[2]/td[2]")
+   @FindBy(xpath="//tbody/tr[2]/td[2]")
    WebElement NameSpeciality2th;
-
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[2]")
+   @FindBy(xpath="//tbody/tr[1]/td[2]")
    WebElement FirstNametd;
 
 

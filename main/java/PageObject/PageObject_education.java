@@ -23,29 +23,29 @@ public class PageObject_education {
 
 
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/button[1]")
+   @FindBy(xpath="//button[@type='submit']")
    WebElement SearchButtom;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[1]/div/form/div/div[1]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='title']")
    WebElement SearchName;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[1]/div/form/div/div[3]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='code']")
    WebElement SearchCode;
       
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[1]/div/form/div/div[4]/button[2]")
+   @FindBy(xpath="//button[@type='button' and @mattooltip='بارگذاری مجدد']")
    WebElement Refresh;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[2]/table/tbody/tr[1]/td[1]")
+   @FindBy(xpath="//tbody/tr[1]/td[2]")
    WebElement FirstCodetd;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[2]/table/tbody/tr[6]/td[1]")
+   @FindBy(xpath="//tbody/tr[6]/td[1]")
    WebElement NameEducation6th;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-education/div/mat-card/mat-card-content/div[2]/table/tbody/tr[2]/td[1]")
+   @FindBy(xpath="//tbody/tr[2]/td[1]")
    WebElement NameEducation2th;
 
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-speciality-type/div/mat-card/mat-card-content/div[2]/table/tbody/tr/td[2]")
+   @FindBy(xpath="//tbody/tr[1]/td[1]")
    WebElement FirstNametd;
 
    
