@@ -1,12 +1,11 @@
-package PageObject;
+package cis.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import Package.element_Highlight;
-
+import cis.cispackage.element_Highlight;
 
 public class PageObgectLogin {
 	
@@ -14,16 +13,16 @@ public class PageObgectLogin {
 	element_Highlight eh= new element_Highlight();
 
 
-    @FindBy(xpath="/html/body/app-root/div/app-login/div/div/div/div[3]/form/div[1]/div/input")
+    @FindBy(xpath="//input[@formcontrolname='username']")
 	WebElement userName;
     
-    @FindBy(xpath="/html/body/app-root/div/app-login/div/div/div/div[3]/form/div[2]/div/input[1]")
+    @FindBy(xpath="//input[@formcontrolname='password']")
 	WebElement password;
 
-    @FindBy(xpath="/html/body/app-root/div/app-login/div/div/div/div[3]/form/div[3]/re-captcha/div/div/iframe")
+    @FindBy(xpath="//iframe[@title='reCAPTCHA']")
 	WebElement iframeSwitch;
 
-    @FindBy(xpath="/html/body/app-root/div/app-login/div/div/div/div[3]/form/div[4]/button")
+    @FindBy(xpath="//button[text()='ورود']")
 	WebElement loginbutton;
     
     
@@ -44,14 +43,14 @@ public class PageObgectLogin {
 		
 	    driver.switchTo().frame(iframeSwitch);
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("/html/body/div[2]/div[3]/div[1]/div/div/span")).click();
+	    driver.findElement(By.xpath("//span[@id='recaptcha-anchor']")).click();
 		driver.switchTo().defaultContent();
-		Thread.sleep(60000);
+		Thread.sleep(50000);
 		
     	eh.highlightElement(driver, loginbutton);
 		loginbutton.click();
 		eh.unhighlightLast(driver, loginbutton);
-	    Thread.sleep(4000);
+	    Thread.sleep(3000);
 
 
 	}

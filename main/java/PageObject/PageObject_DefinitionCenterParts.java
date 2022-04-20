@@ -27,28 +27,28 @@ public class PageObject_DefinitionCenterParts {
   String AddedStandardCheck;
 
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select/div/div[1]")
+   @FindBy(xpath="//mat-select[@name='active']")
    WebElement Active_Diactive;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[6]/button[1]")
+   @FindBy(xpath="//button[@type='submit' and  @mattooltip='جستجو']")
    WebElement SearchButtom;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[4]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="(//input[@name='title'])[2]")
    WebElement SearchName;
-   
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[5]/mat-form-field/div/div[1]/div/input")
+
+   @FindBy(xpath="//input[@name='unitCode']")
    WebElement SearchCode;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[2]/mat-form-field/div/div[1]/div/mat-select/div/div[1]/span")
+   @FindBy(xpath="(//mat-select[@name='activity'])[2]")
    WebElement SearchActivity;
    
    @FindBy(xpath="/html/body/div[2]/div[2]/div/div/div/mat-option[1]/span")
    WebElement ActivityDarmani;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[3]/mat-form-field/div/div[1]/div/mat-select/div/div[1]/span")
+   @FindBy(xpath="(//mat-select[@name='group'])[2]")
    WebElement SearchGroup;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[5]/button[1]")
+   @FindBy(xpath="//button[text()='افزودن']")
    WebElement AddButton;
    
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[6]/button[2]")
@@ -60,37 +60,37 @@ public class PageObject_DefinitionCenterParts {
    @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select/div/div[1]")
    WebElement Activity;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[2]/mat-form-field/div/div[1]/div/mat-select/div/div[1]")
+   @FindBy(xpath="(//mat-select[@name='group'])[1]")
    WebElement Group;
    
-   @FindBy(xpath="/html/body/div[2]/div[2]/div/div/div/mat-option[6]/span")
+   @FindBy(xpath="//div[@role='listbox']/child::mat-option[6]")
    WebElement Group_Clinic;
    
-   @FindBy(xpath="/html/body/div[2]/div[2]/div/div/div/mat-option[2]/span")
+   @FindBy(xpath="//div[@role='listbox']/child::mat-option[2]")
    WebElement Group_Emergency;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[3]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="(//input[@name='title'])[1]")
    WebElement Name;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[4]/mat-form-field/div/div[1]/div/input")
+   @FindBy(xpath="//input[@name='code']")
    WebElement Code;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/thead/tr/th[5]/mat-checkbox/label/span[1]")
+   @FindBy(xpath="//input[@type='checkbox']")
    WebElement Standardization;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr[1]/td[5]/mat-form-field/div/div[1]/div/mat-select/div/div[1]")
+   @FindBy(xpath="//tbody/tr[1]/td[5]/descendant::mat-select[@role='combobox']")
    WebElement StandardizationCombo;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr[1]/td[2]")
+   @FindBy(xpath="//tbody/tr[1]/td[2]")
    WebElement FirstNametd;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr[2]/td[2]")
+   @FindBy(xpath="//tbody/tr[2]/td[2]")
    WebElement SecondNametd;
 
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr[1]/td[4]")
+   @FindBy(xpath="//tbody/tr[1]/td[4]")
    WebElement FirstCodetd;
    
-   @FindBy(xpath="/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr/td[3]")
+   @FindBy(xpath="//tbody/tr[1]/td[3]")
    WebElement FirstGrouptd;
 
 
@@ -172,7 +172,7 @@ public class PageObject_DefinitionCenterParts {
    public void EditCenterPart ( WebDriver driver , String NewName, String NewCode) throws InterruptedException {
 	   //Edit Name
 	   Actions action = new Actions(driver);
-	   WebElement PenButton =driver.findElement(By.xpath("/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr/td[6]/button"));
+	   WebElement PenButton =driver.findElement(By.xpath("//mat-icon[text()='edit' or role='img']"));
 	   action
 	   .click(PenButton)
 	   .click(Name)
@@ -183,7 +183,7 @@ public class PageObject_DefinitionCenterParts {
 	   .click(Name)
 	   .sendKeys(NewName)
 	   .perform();
-	   WebElement EditButton =driver.findElement(By.xpath("/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[5]/button[1]"));
+	   WebElement EditButton =driver.findElement(By.xpath("//button[text()='ویرایش']"));
 	   EditButton.click();
 //	   WebElement POPUP =driver.findElement(By.xpath("/div/div[1]"));
 //	   Thread.sleep(500);
@@ -198,7 +198,7 @@ public class PageObject_DefinitionCenterParts {
 
 	   
 	   //Edit Code
-	   WebElement PenButton1 =driver.findElement(By.xpath("/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[3]/table/tbody/tr/td[6]/button"));
+	   WebElement PenButton1 =driver.findElement(By.xpath("//mat-icon[text()='edit' or role='img']"));
 	   action
 	   .click(PenButton1)
 	   .click(Code)
@@ -209,7 +209,7 @@ public class PageObject_DefinitionCenterParts {
 	   .click(Code)
 	   .sendKeys(NewCode)
 	   .perform();
-	   WebElement EditButton1 =driver.findElement(By.xpath("/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[1]/form/div/div[5]/button[1]"));
+	   WebElement EditButton1 =driver.findElement(By.xpath("//button[text()='ویرایش']"));
 	   EditButton1.click();
 //	   String b=POPUP.getText();
 //       Assert.assertTrue(b.contains("موفقیت"));
@@ -267,7 +267,7 @@ public class PageObject_DefinitionCenterParts {
 
 		   try{
 
-			   WebElement Group_Emergency1 =driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div/mat-option[2]/span"));
+			   WebElement Group_Emergency1 =driver.findElement(By.xpath("//div[@role='listbox']/child::mat-option[2]"));
 			   Group_Emergency1.click();
 
 		      staleElement = false;
@@ -281,10 +281,10 @@ public class PageObject_DefinitionCenterParts {
 
 		 }
 
-	   WebElement Group_Emergency1 =driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div/mat-option[2]/span"));
+	   WebElement Group_Emergency1 =driver.findElement(By.xpath("//div[@role='listbox']/child::mat-option[2]"));
 	   Group_Emergency1.click();
 	   
-	   WebElement SearchButtom =driver.findElement(By.xpath("/html/body/app-root/div[2]/div[2]/div/div/app-definition-center-parts/div/mat-card/mat-card-content/div[2]/div/form/div/div[6]/button[1]/img"));
+	   WebElement SearchButtom =driver.findElement(By.xpath("//button[@type='submit' and  @mattooltip='جستجو']"));
 	   System.out.println("99999999999999");
 	   Thread.sleep(1000);
 	   action
